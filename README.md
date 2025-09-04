@@ -4,4 +4,4 @@
 Этот репозиторий является каркасом для будущего веб-приложения.
 
 ## Ссылки
-- [Публичная страница на GitHub Pages](https://seffax098.github.io/project-front/)
+- [Публичная страница на GitHub Pages](https://seffax098.github.io/project-front/src/index.html/)
