@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О нас - Название вашего сайта</title>
     <meta name="description" content="Узнайте больше о нашей компании и истории">
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <img src="../assets/logo.png">
-        <!-- Главное меню навигации -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
+    <!-- Шапка сайта -->
+    <header class="site-header">
+        <a class="site-header__brand" href="index.html">
+            <img src="../assets/logo.png" alt="WWW">
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+            <ul class="site-nav__list">
+                <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="#">О нас</a></li>
+                <li class="site-nav__item"><a class="site-nav__link site-nav__link--cta"
+                        href="contacts.html">Связаться</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -23,8 +30,8 @@
     <main>
         <!-- Простые "хлебные крошки" -->
         <nav aria-label="Хлебные крошки">
-            <a href="index.html">Главная</a> →
-            <span>О нас</span>
+            <a href="index.html">Главная</a>
+            <span>→ О нас</span>
         </nav>
 
         <h1>О нашей компании</h1>
@@ -34,7 +41,13 @@
         </section>
         <section>
             <h2>Наша команда</h2>
-            <p>Текст о команде...</p>
+
+            <!-- Браузер сам выбирает лучший ресурс по ширине контейнера -->
+            <img src="img/card-640.jpg" srcset="img/card-640.jpg 640w, img/card-960.jpg 960w, img/card-1280.jpg 1280w"
+                sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px"
+                alt="Фото нашего коллектива" loading="lazy">
+
+            <p>Дружный колектив</p> 
         </section>
     </main>
 
@@ -43,4 +56,5 @@
         <p>Телефон: +7 (123) 456-78-90</p>
     </footer>
 </body>
+
 </html>
