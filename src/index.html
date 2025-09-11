@@ -7,27 +7,57 @@
     <title>Главная - Название вашего сайта</title>
     <meta name="description" content="Краткое описание главной страницы вашего сайта">
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
+    <!-- Герой-секция -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 style="text-align: center;">Добро пожаловать на сайт!</h1>
+        </div>
+    </section>
+
+
     <!-- Шапка сайта -->
-    <header>
-        <img src="../assets/logo.png" alt="WWW">
-        <!-- Главное меню навигации -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
+    <header class="site-header">
+        <a class="site-header__brand" href="index.html">
+            <img src="../assets/logo.png" alt="WWW">
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+            <ul class="site-nav__list">
+                <li class="site-nav__item"><a class="site-nav__link" href="#">Главная</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="about.html">О нас</a></li>
+                <li class="site-nav__item"><a class="site-nav__link site-nav__link--cta"
+                        href="contacts.html">Связаться</a></li>
             </ul>
         </nav>
     </header>
 
+
+    <!-- Кнопка смены темы -->
+    <button class="theme-toggle" type="button" aria-pressed="false">Переключить тема</button>
+    <script defer>
+        const KEY = 'theme', btn = document.querySelector('.theme-toggle');
+        const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+        // Автовыбор: системная тема или сохранённый выбор пользователя
+        if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
+            prefersDark)) {
+            document.body.classList.add('theme-dark');
+            btn?.setAttribute('aria-pressed', 'true');
+        }
+        // Переключение по кнопке с сохранением в localStorage
+        btn?.addEventListener('click', () => {
+            const isDark = document.body.classList.toggle('theme-dark');
+            btn.setAttribute('aria-pressed', String(isDark));
+            localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+        });
+    </script>
+
     <!-- Уникальное основное содержимое страницы -->
     <main>
         <h1>Добро пожаловать на наш сайт!</h1>
-
-
 
         <!-- Секция 1 с якорем -->
         <section id="services">
