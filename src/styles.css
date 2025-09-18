@@ -69,6 +69,8 @@ button:hover {
 :root {
     /* Палитра */
     --color-bg: #fff;
+    --color-bglink: #aaa;
+    --color-bgactlink: grey;
     --color-fg: #0b0b0b;
     --color-muted: #666;
     --color-primary: #0a84ff;
@@ -89,6 +91,8 @@ button:hover {
 /* Тёмная тема: переопределяем только значения токенов */
 body.theme-dark {
     --color-bg: #0b0b0b;
+    --color-bglink: #666;
+    --color-bgactlink: #fff;
     --color-fg: #f5f5f5;
     --color-muted: #aaa;
     --color-primary: #6aa2ff;
@@ -153,10 +157,6 @@ html {
     outline-offset: 4px;
 }
 
-.site-nav__link {
-    color: var(--color-fg);
-}
-
 footer {
     margin-top: 32px;
 }
@@ -193,4 +193,22 @@ footer {
 */
     border: 0;
     border-radius: var(--radius);
+}
+
+li {
+    margin: 7px auto;
+}
+
+.site-nav__link {
+    color: var(--color-fg);
+    background-color: var(--color-bglink);
+    border-radius: var(--radius);
+    padding: 3px;
+}
+
+.activePage {
+    color: #0b0b0b;
+    background-color: var(--color-bgactlink);
+    border-radius: var(--radius);
+    padding: 3px;
 }
